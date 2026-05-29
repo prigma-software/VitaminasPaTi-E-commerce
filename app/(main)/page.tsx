@@ -1,10 +1,15 @@
 import { Suspense } from "react"
 import { createClient } from "@/lib/supabase/server"
 import HomeContent from "@/features/home/components/HomeContent"
+import { hasEnvVars } from "@/lib/utils"
 
 export const dynamic = 'force-dynamic'
 
 async function getProductsData() {
+  if (!hasEnvVars) {
+    return { categories: [], products: [] }
+  }
+
   const supabase = await createClient()
   const { data: categories } = await supabase.from('categories').select('*')
   const { data: products } = await supabase.from('products').select('*').eq('active', true).eq('archived', false).order('created_at', { ascending: false })
