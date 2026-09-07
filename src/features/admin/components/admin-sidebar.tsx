@@ -38,19 +38,19 @@ export function AdminSidebar() {
           />
         ))}
       </nav>
-      <div className="p-4 border-t border-border space-y-2">
-        <Link href="/profile">
-          <Button variant="outline" className="w-full justify-start">
+      <div className="p-4 border-t border-border flex flex-col gap-2">
+        <Button asChild variant="outline" className="w-full justify-start">
+          <Link href="/profile">
             <User className="w-5 h-5 mr-3" />
             Mi Cuenta
-          </Button>
-        </Link>
-        <Link href="/">
-          <Button variant="outline" className="w-full justify-start">
+          </Link>
+        </Button>
+        <Button asChild variant="outline" className="w-full justify-start">
+          <Link href="/">
             <House className="w-5 h-5 mr-3" />
             Ir a la tienda
-          </Button>
-        </Link>
+          </Link>
+        </Button>
         <form action={logout}>
           <Button variant="destructive" type="submit" className="w-full justify-start">
             <SignOut className="w-5 h-5 mr-3" />
