@@ -25,7 +25,7 @@ echo -e "${GREEN}✔ Docker está activo.${NC}"
 if [ -z "$STRIX_LLM" ]; then
   # Verificar si Ollama local está respondiendo
   if curl -s http://127.0.0.1:11434/api/tags >/dev/null 2>&1; then
-    export STRIX_LLM="ollama/qwen2.5-coder:7b"
+    export STRIX_LLM="ollama/qwen2.5-coder:14b"
     export LLM_API_BASE="http://localhost:11434"
     echo -e "${GREEN}✔ Conectado a Ollama local (Modelo: ${STRIX_LLM})${NC}"
   elif [ -n "$GROQ_API_KEY" ]; then
@@ -38,7 +38,7 @@ if [ -z "$STRIX_LLM" ]; then
     echo -e "${GREEN}✔ Proveedor configurado con Gemini: ${STRIX_LLM}${NC}"
   else
     # Fallback predeterminado a Ollama
-    export STRIX_LLM="ollama/qwen2.5-coder:7b"
+    export STRIX_LLM="ollama/qwen2.5-coder:14b"
     export LLM_API_BASE="http://localhost:11434"
     echo -e "${CYAN}ℹ Usando configuración predeterminada: Ollama local (${STRIX_LLM})${NC}"
   fi
