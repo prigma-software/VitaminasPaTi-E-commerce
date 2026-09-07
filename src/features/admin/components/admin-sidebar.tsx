@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { SignOut, House } from "@phosphor-icons/react";
+import { SignOut, House, User } from "@phosphor-icons/react";
 import { Button } from "@/components/ui/button";
 import { logout } from "@/features/auth/actions/authActions";
 import { SIDEBAR_ITEMS } from "@/lib/constants/admin";
@@ -39,6 +39,12 @@ export function AdminSidebar() {
         ))}
       </nav>
       <div className="p-4 border-t border-border space-y-2">
+        <Link href="/profile">
+          <Button variant="outline" className="w-full justify-start">
+            <User className="w-5 h-5 mr-3" />
+            Mi Cuenta
+          </Button>
+        </Link>
         <Link href="/">
           <Button variant="outline" className="w-full justify-start">
             <House className="w-5 h-5 mr-3" />
