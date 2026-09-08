@@ -177,7 +177,19 @@ ADMIN_EMAIL=contacto@prigma.net
 NEXT_PUBLIC_APP_URL=https://e-commerce.prigma.net
 
 # WhatsApp Cloud API (Meta)
+# Modo de ambiente: "test" (Sandbox) o "production" (Línea oficial)
+WHATSAPP_ENV=test
+
+# Número de Pruebas Sandbox (+1 555-659-3589)
+WHATSAPP_PHONE_NUMBER_ID_TEST=1245197405353605
+
+# Número Oficial en Producción (+57 311 2078781 - Prigma)
+WHATSAPP_PHONE_NUMBER_ID_PROD=1097831320088489
+
+# ID activo (opcional si usas WHATSAPP_ENV; si se define, actúa como fallback)
 WHATSAPP_PHONE_NUMBER_ID=1245197405353605
+
+# Token permanente de Usuario del Sistema (Meta)
 WHATSAPP_ACCESS_TOKEN=EAA...tu_token_permanente_aqui...
 WHATSAPP_API_VERSION=v22.0
 WHATSAPP_USE_TEMPLATES=true
@@ -190,6 +202,10 @@ WHATSAPP_TEMPLATE_MANUAL_ORDER=manual_order_pending
 WHATSAPP_TEMPLATE_WORK_ORDER_CREATED=work_order_created
 WHATSAPP_TEMPLATE_WORK_ORDER_STATUS=work_order_status_update
 ```
+
+> [!TIP]
+> **Cambio instantáneo entre Pruebas y Producción:**
+> Solo necesitas cambiar `WHATSAPP_ENV=test` a `WHATSAPP_ENV=production`. El sistema y el servicio `WhatsAppService` conmutan automáticamente entre `WHATSAPP_PHONE_NUMBER_ID_TEST` y `WHATSAPP_PHONE_NUMBER_ID_PROD`.
 
 ---
 
@@ -232,11 +248,17 @@ Verás los 114 tests pasando limpiamente.
 ## 🧪 7. Pruebas y Comandos Útiles
 
 ### Probar el envío manual por CLI
-Puedes lanzar un mensaje de prueba en cualquier momento con el script incluido:
+Puedes lanzar un mensaje de prueba en cualquier momento con el script incluido, eligiendo si quieres que salga desde el Sandbox o desde la línea oficial:
 
 ```bash
-# Envía un mensaje de prueba al número especificado
+# Envía desde el ambiente activo en tu .env (WHATSAPP_ENV):
 node scripts/test-whatsapp.mjs 3178079672
+
+# Forzar envío desde Sandbox de pruebas (+1 555...):
+node scripts/test-whatsapp.mjs 3178079672 --env=test
+
+# Forzar envío desde Línea oficial en producción (+57 311... Prigma):
+node scripts/test-whatsapp.mjs 3178079672 --env=prod
 ```
 
 ### Probar envío de plantilla aprobada con Node:
