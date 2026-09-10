@@ -62,5 +62,9 @@ supabase/.temp/
 # wrangler
 .wrangler/
 
-.idea/
-*.iml.env.backup
+*.iml
+*.env.backup
+
+# strix security runs
+strix_runs/
+
