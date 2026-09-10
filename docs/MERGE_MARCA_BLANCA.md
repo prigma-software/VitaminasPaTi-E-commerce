@@ -80,8 +80,11 @@ CRON_SECRET=cron_secret_...[CONFIGURADO_LOCALMENTE]
 
 ---
 
-## 6. Estado en Control de Versiones (Git)
+## 6. Estado en Control de Versiones y Despliegue Cloudflare
 
 - **Repositorio Remoto:** `prigma-software/VitaminasPaTi-E-commerce.git`
 - **Rama:** `master`
-- **Commits:** Sincronizado con upstream y listo para publicar a `origin master`.
+- **Worker Cloudflare:** `vitaminaspati-e-commerce`
+- **Dominio Personalizado:** `https://vitaminaspati.com`
+- **Estado:** ✅ Desplegado y verificado en vivo (`HTTP/2 200 OK`).
+
