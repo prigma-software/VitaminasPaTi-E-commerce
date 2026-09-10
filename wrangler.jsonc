@@ -1,7 +1,7 @@
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
 	"main": ".open-next/worker.js",
-	"name": "e-commerce-prigma",
+	"name": "vitaminaspati-e-commerce",
 	"compatibility_date": "2025-05-25",
 	"compatibility_flags": ["nodejs_compat"],
 	"workers_dev": false,
@@ -10,12 +10,12 @@
 		"binding": "ASSETS"
 	},
 	"routes": [
-		{ "pattern": "e-commerce.prigma.net", "custom_domain": true }
+		{ "pattern": "vitaminaspati.com", "custom_domain": true }
 	],
 	"services": [
 		{
 			"binding": "WORKER_SELF_REFERENCE",
-			"service": "e-commerce-prigma"
+			"service": "vitaminaspati-e-commerce"
 		}
 	],
 	"observability": {
