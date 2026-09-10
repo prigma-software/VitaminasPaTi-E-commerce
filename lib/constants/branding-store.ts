@@ -43,6 +43,9 @@ export const storeBranding = {
     logoFull: "/images/brandClient/imagotipo.png",
     favicon: "/images/brandClient/isotipo.png",
     ogImage: "/images/brandClient/imagotipo.png",
+    aboutHero: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=1200&h=400&fit=crop",
+    aboutTeam: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=200&fit=crop",
+    aboutWarehouse: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=600&h=200&fit=crop",
   },
 
   // About page content
